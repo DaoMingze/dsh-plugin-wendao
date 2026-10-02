@@ -1,0 +1,28 @@
+# NOTICE
+
+This package is a DeepSeek Harness port of **Skills For Real Engineers** by
+Matt Pocock, redistributed under the MIT License in `LICENSE`.
+
+- Upstream repository: https://github.com/mattpocock/skills
+- Upstream version and commit: see `upstream.json`
+- Copyright (c) 2026 Matt Pocock
+
+## What is upstream content
+
+Everything under `skills/` is copied verbatim from the upstream repository by
+`scripts/sync-skills.mjs`. Upstream prose is not edited, translated, or
+reordered here. `upstream.json` records the exact version, commit, file list,
+and content digest of every vendored skill.
+
+## What this port adds
+
+`cordis.patch.yml`, `package.json`, `scripts/`, `locale/`, `icon.svg`,
+`README.md`, and this file are the port itself and are offered under the same
+MIT terms.
+
+## What was left out
+
+`agents/` directories hold another harness's metadata and are not vendored, as
+are the upstream `.claude-plugin/`, `.agents/`, `.changeset/`, `docs/`,
+`scripts/`, and non-promoted skill buckets (`misc/`, `in-progress/`,
+`deprecated/`).

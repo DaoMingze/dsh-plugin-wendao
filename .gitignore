@@ -1,0 +1,21 @@
+# ---- 本地隐私禁列（含真实标识符，绝不入库）----
+
+# ---- 发版产物----
+dist/
+
+# ---- 本地环境产物 ----
+*.local
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+.worktrees/
+
+# 外部参考资料
+docs/SME/
+
+# 本地工具目录（各自持有会话/设置状态，与他人的机器无关，不入库）
+.superpowers/
+.workbuddy/
+.codebuddy/
+.trae/

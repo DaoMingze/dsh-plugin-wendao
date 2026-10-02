@@ -1,0 +1,22 @@
+# dsh-plugin-matt-skills adds Matt Pocock's engineering and productivity skills
+# to every session in this profile.
+#
+# This bundle ships no JavaScript. It mounts the harness's own
+# @deepseek-ai/dsh-skill-filesystem provider a second time, with an isolated
+# configuration covering only the vendored catalog: no project roots, no user
+# roots, no watcher. The harness's own provider instance keeps serving project
+# and user skill roots unchanged, and a local skill with the same name still
+# wins inside its own scope.
+#
+# `bundledSkillDir` resolves this package's own `skills/` directory the same way
+# the shipped `cordis` agent preset resolves its bundled skills: through the
+# Loader's `baseUrl`, so the path stays correct wherever the profile lives.
+- insert:
+    - id: matt-skills
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: matt-skills
+        includeDefaultRoots: false
+        watch: false
+        bundledSkillDir: !!js >-
+          process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('dsh-plugin-matt-skills/package.json')), 'skills')

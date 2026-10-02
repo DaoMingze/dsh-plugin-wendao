@@ -1,0 +1,46 @@
+{
+  "name": "dsh-plugin-matt-skills",
+  "version": "1.0.0",
+  "description": "Matt Pocock's engineering and productivity skills for DeepSeek Harness: grilling, spec and ticket flows, TDD, code review, domain modelling and more.",
+  "icon": "./icon.svg",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "skills/",
+    "scripts/",
+    "locale/",
+    "icon.svg",
+    "upstream.json",
+    "README.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "sync": "node scripts/sync-skills.mjs",
+    "check": "node --check scripts/sync-skills.mjs && node scripts/sync-skills.mjs --check"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skills",
+    "matt-pocock",
+    "grilling",
+    "tdd",
+    "code-review",
+    "domain-modeling"
+  ],
+  "license": "MIT"
+}

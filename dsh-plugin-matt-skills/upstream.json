@@ -1,0 +1,285 @@
+{
+  "source": {
+    "repository": "https://github.com/mattpocock/skills",
+    "version": "1.2.3",
+    "license": "MIT",
+    "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+    "manifest": ".claude-plugin/plugin.json"
+  },
+  "vendored": {
+    "excludedPaths": [
+      "agents/"
+    ],
+    "note": "Skill files are copied byte for byte; only another harness's metadata is left out."
+  },
+  "skills": [
+    {
+      "name": "ask-matt",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "PHASE-BOUNDARIES.md",
+        "SKILL.md"
+      ],
+      "digest": "4eff1a7966f4ebe91a57d169f15d3aa8f226e7d10b193044dad898b79591a769"
+    },
+    {
+      "name": "code-review",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "cd715e65cbf32ac5223b24dde1b51f6bd70341e24c834feb2e7c4d4a59999657"
+    },
+    {
+      "name": "codebase-design",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "DEEPENING.md",
+        "DESIGN-IT-TWICE.md",
+        "SKILL.md"
+      ],
+      "digest": "ec7e62ad8463ff99a65af8d5de371a73a7dc63f8128e1e024fb17c31d047267d"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "SKILL.md",
+        "scripts/hitl-loop.template.sh"
+      ],
+      "digest": "766846e31e01b4a23a0a797451d5dc9a59e80b706404d6cd613b535ee2cec4a5"
+    },
+    {
+      "name": "domain-modeling",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "ADR-FORMAT.md",
+        "GLOSSARY-FORMAT.md",
+        "SKILL.md"
+      ],
+      "digest": "51d1135302ac9c5f54d9521fd79415dd118e4ea7f15813ab2ce523822af1799c"
+    },
+    {
+      "name": "grill-me",
+      "bucket": "productivity",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "03dbedd0d686ba4f4198b97f34cbeb726521323d3c99cba36a50f39e0685d286"
+    },
+    {
+      "name": "grill-with-docs",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "5fe1204e73398e385436e2d983038538270de16bd5afceba0763ea1658b2de8a"
+    },
+    {
+      "name": "grilling",
+      "bucket": "productivity",
+      "invocation": "model",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "2b3a0ba46d4f1d279e3d7fdb59fa7a37c013c8e04e41bb4acbab55950aa1b907"
+    },
+    {
+      "name": "handoff",
+      "bucket": "productivity",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "3092cc796060159e3169073c5a9c4f963283993eb67704520166be5cc49eeba1"
+    },
+    {
+      "name": "implement",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "40010a2c19b87cfb5c5002d2cf345871e575a0fc5949f12aa6008065bcc5fcca"
+    },
+    {
+      "name": "implement-spec",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "887b17041947f5f53da58b45dbdc2dfd27fda1b323ae5eb3a88c965e530895f0"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "HTML-REPORT.md",
+        "SKILL.md"
+      ],
+      "digest": "0f220a590708c4ad74138c7c1f6bbe911a662ba9062d2bfba69f12f1152aae0e"
+    },
+    {
+      "name": "pr",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "CREDITS.md",
+        "SKILL.md"
+      ],
+      "digest": "4fc0eff636e4169e31355c9b69529cb6b6c4004e0ef6a18391a4998607667e25"
+    },
+    {
+      "name": "prototype",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "LOGIC.md",
+        "SKILL.md",
+        "UI.md"
+      ],
+      "digest": "af386d3d5ff1472402c60f7129af75d527f948858fefafedee4fac46dde2c718"
+    },
+    {
+      "name": "research",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "600c788396f7638bae25ecee6362303fbfd0e9c3ad7f8d869d33e19ae097ae26"
+    },
+    {
+      "name": "retro",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "4c8375429154657dfee4db527714102f3276edebed9230bc1b13ca96c48a3d05"
+    },
+    {
+      "name": "setup-matt-pocock-skills",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md",
+        "domain.md",
+        "issue-tracker-github.md",
+        "issue-tracker-gitlab.md",
+        "issue-tracker-local.md",
+        "triage-labels.md"
+      ],
+      "digest": "8f4610ba3fb68b5214ece660d6a64b0019d55a5f8867d6178d5d6583aa27a29e"
+    },
+    {
+      "name": "tdd",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "SKILL.md",
+        "mocking.md",
+        "tests.md"
+      ],
+      "digest": "fc09d62722529a8979afd3afbb68d76f3e1e7ba46dc8595bb9aacbbcd1ee6ae8"
+    },
+    {
+      "name": "teach",
+      "bucket": "productivity",
+      "invocation": "user",
+      "files": [
+        "GLOSSARY-FORMAT.md",
+        "LEARNING-RECORD-FORMAT.md",
+        "MISSION-FORMAT.md",
+        "RESOURCES-FORMAT.md",
+        "SKILL.md"
+      ],
+      "digest": "a9bd7ea12a14d04ff288c6003e0e1f4e7bc5f65d6fa725e7fe90bbe0d7a7388c"
+    },
+    {
+      "name": "to-questionnaire",
+      "bucket": "productivity",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "f5cb0c19faa9697965796167cf34f545133cffd3dfa0598cd46438d45414ee30"
+    },
+    {
+      "name": "to-spec",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "8576bd9affdd4dd021ce56317b6c9e44a4aefa72683c9f51e1a157d2adaffcd9"
+    },
+    {
+      "name": "to-tickets",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "38c77067e70d9fa10c48382cef610d2937549fdc4be5afb7ca4c91f30a8a9c39"
+    },
+    {
+      "name": "triage",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "AGENT-BRIEF.md",
+        "OUT-OF-SCOPE.md",
+        "SKILL.md"
+      ],
+      "digest": "ca6eb09753f694bd45c1629e03cc902a9a2e78156483b5108eec026b77d1d1e9"
+    },
+    {
+      "name": "wait-what",
+      "bucket": "productivity",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "bd48ddd41e9891817f29b6579727298651ad68dc81bc9f3bc5e32d2d8c773769"
+    },
+    {
+      "name": "wayfinder",
+      "bucket": "engineering",
+      "invocation": "user",
+      "files": [
+        "SKILL.md"
+      ],
+      "digest": "e83486bafdd6e343eeb2483c239f9cc282cc33544cabf555b961ed8df18e04af"
+    },
+    {
+      "name": "wizard",
+      "bucket": "engineering",
+      "invocation": "model",
+      "files": [
+        "SKILL.md",
+        "template.sh"
+      ],
+      "digest": "22d6889e6ab0f40766884b8a3badb64dd378e56081f346b0bed9a6523c595816"
+    },
+    {
+      "name": "writing-for-agents",
+      "bucket": "productivity",
+      "invocation": "model",
+      "files": [
+        "SKILL-MECHANICS.md",
+        "SKILL.md"
+      ],
+      "digest": "a9beb1faead8484929935d21d36c90b596844efce216f3ee3484847efcd3db89"
+    }
+  ]
+}

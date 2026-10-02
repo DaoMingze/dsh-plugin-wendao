@@ -1,0 +1,24 @@
+# .pre-commit-config.yaml
+default_install_hook_types: [pre-commit, commit-msg]
+minimum_pre_commit_version: "4.4.0"
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      # cordis.patch.yml 用 Cordis Loader 方言：bundledSkillDir 必须是 `!!js`
+      # 表达式以动态定位本包 skills 目录，没有可移植的替代写法。PyYAML 对
+      # tag:yaml.org,2002:js 没有构造器（--unsafe 也不行），故只排除这一个文件。
+      - id: check-yaml
+        exclude: ^dsh-plugin-matt-skills/cordis\.patch\.yml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+  - repo: https://git.bookrest.top/wizard/CommitGate.git
+    rev: v0.1.0
+    hooks:
+      - id: commit-msg-check
