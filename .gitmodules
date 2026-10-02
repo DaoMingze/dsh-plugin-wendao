@@ -1,3 +1,6 @@
 [submodule "matt-skills"]
 	path = matt-skills
 	url = https://github.com/mattpocock/skills
+[submodule "diagram-design"]
+	path = diagram-design
+	url = https://github.com/cathrynlavery/diagram-design.git

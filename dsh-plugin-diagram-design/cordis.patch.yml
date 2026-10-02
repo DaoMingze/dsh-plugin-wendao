@@ -1,0 +1,20 @@
+# dsh-plugin-diagram-design ships Cathryn Lavery's Diagram Design skill to every
+# session in this profile.
+#
+# Like its sibling dsh-plugin-matt-skills, this bundle ships no JavaScript. It
+# mounts the harness's own @deepseek-ai/dsh-skill-filesystem provider a second
+# time, isolated to the vendored catalog: no project roots, no user roots, no
+# watcher. The harness's own provider instance keeps serving project and user
+# skill roots unchanged.
+#
+# `bundledSkillDir` resolves this package's own `skills/` directory through the
+# Loader's `baseUrl`, so the path stays correct wherever the profile lives.
+- insert:
+    - id: diagram-design
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: diagram-design
+        includeDefaultRoots: false
+        watch: false
+        bundledSkillDir: !!js >-
+          process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('dsh-plugin-diagram-design/package.json')), 'skills')

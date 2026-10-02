@@ -1,0 +1,45 @@
+# NOTICE
+
+This package is a DeepSeek Harness port of **Diagram Design** by Cathryn
+Lavery, redistributed under the MIT License in `LICENSE`.
+
+- Upstream repository: https://github.com/cathrynlavery/diagram-design
+- Upstream version and commit: see `upstream.json`
+- Copyright (c) 2025 Cathryn Lavery
+
+## What is upstream content
+
+Everything under `skills/diagram-design/` is copied from the upstream
+repository by `scripts/sync-skills.mjs`:
+
+| Path | Files | Contents |
+|---|---|---|
+| `SKILL.md` | 1 | philosophy, type selection, connector rules, taste gate |
+| `references/` | 60 | the 42 type references plus primitives, import, export, style guide |
+| `assets/` | 177 | templates, per-type examples in three variants, gallery, icon set |
+| `scripts/` | 5 | draw.io / Mermaid / Excalidraw extractors, self-check, SVG export |
+
+Upstream prose is not edited, translated, or reordered; line endings are
+normalized to LF, which is what upstream stores for the entry file (its
+`.gitattributes` pins `SKILL.md` to `eol=lf`). `upstream.json` records the exact
+version, commit, file list, and content digest.
+
+`skills/diagram-design/scripts/` here is upstream content, not this port's
+tooling: `SKILL.md` invokes those Python helpers. The port's own sync tool lives
+at the package root in `scripts/`.
+
+## What this port adds
+
+`cordis.patch.yml`, `package.json`, `scripts/`, `locale/`, `icon.svg`,
+`README.md`, and this file are the port itself and are offered under the same
+MIT terms.
+
+## What was left out
+
+The upstream repository's other host surfaces are not vendored: its
+`.claude-plugin/`, `.codex-plugin/`, `.factory-plugin/`, and `.agents/`
+manifests, its `commands/` and `prompts/` slash-command templates, its `docs/`
+tree, and its own CI scripts. DeepSeek Harness reaches the same flows through
+the skill body itself plus its own user-invoked command registry; the vendored
+`references/` and `assets/` are complete, so nothing the skill routes to at run
+time is missing.

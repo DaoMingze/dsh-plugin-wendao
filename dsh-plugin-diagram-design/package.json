@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-diagram-design",
+  "version": "1.0.0",
+  "description": "Editorial diagram design for DeepSeek Harness: 42 diagram types as self-contained HTML + SVG, with draw.io / Mermaid / Excalidraw import.",
+  "icon": "./icon.svg",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "skills/",
+    "locale/",
+    "icon.svg",
+    "upstream.json",
+    "README.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaoMingze/dsh-plugin-wendao.git",
+    "directory": "dsh-plugin-diagram-design"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "sync": "node scripts/sync-skills.mjs",
+    "check": "node --check scripts/sync-skills.mjs && node scripts/sync-skills.mjs --check"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "diagram",
+    "diagrams",
+    "svg",
+    "architecture",
+    "flowchart",
+    "drawio",
+    "mermaid",
+    "excalidraw",
+    "editorial"
+  ],
+  "license": "MIT"
+}
