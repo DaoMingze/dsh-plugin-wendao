@@ -42,13 +42,25 @@
 
 ## 安装
 
-在本 Harness 里（需要 Full access 或逐次批准）：
+从 npm 安装（包名 `dsh-plugin-matt-skills`，把 `desktop` 换成你的 profile 名）：
+
+```bash
+dsh plugin --profile desktop add dsh-plugin-matt-skills
+```
+
+本地开发也可以不发布，把 target 指向本目录的绝对路径即可，改完 skill 立即生效：
 
 ```text
 plugin_manager action=install_bundle target="<本目录的绝对路径>"
 ```
 
-装完刷新页面即生效，无需重启。也可作为普通依赖装进 profile，或从 git 仓库安装。卸载用 `plugin_manager action=remove_bundle target=dsh-plugin-matt-skills`。
+装完刷新页面即生效，无需重启。卸载：
+
+```bash
+dsh plugin --profile desktop remove dsh-plugin-matt-skills
+```
+
+GUI 里对应 `plugin_manager action=remove_bundle target=dsh-plugin-matt-skills`。
 
 ## 用法
 
