@@ -1,4 +1,4 @@
-# 问道的 DSH 插件仓库
+# 璺道的 DSH 插件仓库
 
 基于deepseek harness自我生产的插件。
 
