@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-matt-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Matt Pocock's engineering and productivity skills for DeepSeek Harness: grilling, spec and ticket flows, TDD, code review, domain modelling and more.",
   "icon": "./icon.svg",
   "type": "module",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DaoMingze/DaoMingze.git",
+    "url": "git+https://github.com/DaoMingze/dsh-plugin-wendao.git",
     "directory": "dsh-plugin-matt-skills"
   },
   "dsh": {

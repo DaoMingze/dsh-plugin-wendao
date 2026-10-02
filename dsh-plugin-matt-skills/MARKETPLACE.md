@@ -9,14 +9,14 @@
 ## 一、Issue 标题
 
 ```text
-[插件提交] DaoMingze/DaoMingze — 把 Matt Pocock 的 27 个工程 skill 带进每个 DSH 会话
+[插件提交] DaoMingze/dsh-plugin-wendao — 把 Matt Pocock 的 27 个工程 skill 带进每个 DSH 会话
 ```
 
 ## 二、Issue 正文（复制这一段）
 
 ```markdown
 ### 仓库地址
-https://github.com/DaoMingze/DaoMingze
+https://github.com/DaoMingze/dsh-plugin-wendao
 
 ### 一句话价值
 装上后每个 DSH 会话立刻多出 27 个工程 skill：11 个由模型按任务自动取用（tdd、code-review、codebase-design、domain-modeling、diagnosing-bugs、prototype、research、pr、wizard、grilling、writing-for-agents），16 个由你在输入框用 / 唤起（grill-me、grill-with-docs、to-spec、to-tickets、implement、implement-spec、wayfinder、triage、improve-codebase-architecture、retro、handoff、teach、to-questionnaire、wait-what、ask-matt、setup-matt-pocock-skills）。全部按需加载，不调用就不占上下文。
@@ -77,14 +77,14 @@ MIT。skills/ 内容版权归 Matt Pocock（上游 mattpocock/skills，MIT）；
 - [ ] 插件导出 apply(ctx) 模块（本包为配置型 bundle：运行时 apply 来自被插入的官方包；依据与复核方式见「补充说明」）
 ```
 
-## 三、提交前必须先做完的五件事
+## 三、提交前清单与当前状态
 
 按依赖顺序：
 
-1. **push 代码**。GitHub 上 `DaoMingze/DaoMingze` 目前仍是旧状态（`pushed_at` 2026-07-29、`size` 17 KB、description `README`），本地两个 commit 尚未 push。市场扫的是公开仓库，不 push 等于提交空壳。
+1. **push 代码 —— 已完成**。仓库是 `DaoMingze/dsh-plugin-wendao`（2026-10-02 新建、公开），远端 `main` = `e59f53e`，三个提交都已 push。注意 `DaoMingze/DaoMingze` 是另一个无关的旧仓库，别用它提交。
 2. **把包发到 npm**。安装命令里的 `dsh-plugin-matt-skills` 必须真实存在（当前 `npm view` 404）。见 `README.md` 的发布步骤。
 3. **加 GitHub topic `dsh-plugin`**：仓库页 → Settings → Topics，或从 <https://github.com/topics/dsh-plugin> 进入。当前 API 返回 `topics: []`。
-4. **改仓库描述**。现在只有 `README` 一个词；市场要求「使用准确的仓库描述」。建议：`把 Matt Pocock 的 27 个工程 skill 带进每个 DeepSeek Harness 会话（DSH 插件）`。
+4. **改仓库描述**。新仓库的 description 是空的（API：`description: null`）；市场要求「使用准确的仓库描述」。建议：`把 Matt Pocock 的 27 个工程 skill 带进每个 DeepSeek Harness 会话（DSH 插件）`。
 5. **确认 README 含安装命令**。市场扫的是**仓库根** README（`/README.md`，你的那份），不是插件目录里的。根 README 需要出现这一行：
 
    ```bash
@@ -94,6 +94,8 @@ MIT。skills/ 内容版权归 Matt Pocock（上游 mattpocock/skills，MIT）；
    插件目录内的 [README.md](./README.md) 已经有了。
 
 可选但建议：**仓库根放一份 LICENSE**。GitHub API 报 `license: null`（本插件的 LICENSE 在子目录里，GitHub 不识别），根目录放一份会让仓库更可信。
+
+**一个结构性风险，提前说明**：插件包在仓库**子目录** `dsh-plugin-matt-skills/` 里，仓库根既没有 `package.json`、也没有 `dsh.bundle.patch`。市场扫的是仓库，**若**自动扫描只看根目录，就会找不到插件清单（`apply(ctx)`、`dsh.bundle.patch` 都在子目录里）。这一条我没有官方依据、无法预先验证，只能等收录结果。真被卡在这里的话，最干净的办法是把包移到仓库根（该仓库已专用于这一个插件，移上去更自然）；届时需要同步改 `.pre-commit-config.yaml` 里 `check-yaml` 的 exclude 路径、`repository.directory` 字段、以及安装说明。
 
 ## 四、清单第 4 条（`apply(ctx)`）：已定按方案 A 处理
 
@@ -110,5 +112,5 @@ MIT。skills/ 内容版权归 Matt Pocock（上游 mattpocock/skills，MIT）；
 把下面这行加进**仓库根** README，链接里的 slug 以收录后详情页地址为准：
 
 ```markdown
-[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/DaoMingze/DaoMingze)
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/DaoMingze/dsh-plugin-wendao)
 ```
