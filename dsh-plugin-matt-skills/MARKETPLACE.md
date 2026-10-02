@@ -81,17 +81,18 @@ MIT。skills/ 内容版权归 Matt Pocock（上游 mattpocock/skills，MIT）；
 
 按依赖顺序：
 
-1. **push 代码 —— 已完成**。仓库是 `DaoMingze/dsh-plugin-wendao`（2026-10-02 新建、公开），远端 `main` = `e59f53e`，三个提交都已 push。注意 `DaoMingze/DaoMingze` 是另一个无关的旧仓库，别用它提交。
+1. **push 代码 —— 已完成**。仓库是 `DaoMingze/dsh-plugin-wendao`（2026-10-02 新建、公开），远端 `main` = `c706357`，四个提交都已 push。注意 `DaoMingze/DaoMingze` 是另一个无关的旧仓库，别用它提交。
 2. **把包发到 npm**。安装命令里的 `dsh-plugin-matt-skills` 必须真实存在（当前 `npm view` 404）。见 `README.md` 的发布步骤。
-3. **加 GitHub topic `dsh-plugin`**：仓库页 → Settings → Topics，或从 <https://github.com/topics/dsh-plugin> 进入。当前 API 返回 `topics: []`。
-4. **改仓库描述**。新仓库的 description 是空的（API：`description: null`）；市场要求「使用准确的仓库描述」。建议：`把 Matt Pocock 的 27 个工程 skill 带进每个 DeepSeek Harness 会话（DSH 插件）`。
-5. **确认 README 含安装命令**。市场扫的是**仓库根** README（`/README.md`，你的那份），不是插件目录里的。根 README 需要出现这一行：
+3. **加 topic `dsh-plugin` 并写仓库描述**。两件在同一个面板里，一次做完：打开 <https://github.com/DaoMingze/dsh-plugin-wendao> → 右侧 **About** 的齿轮 ⚙️ → 填下面两项 → **Save changes**。
+   - **Description**（当前为空，API：`description: null`）：`DSH 插件：把 Matt Pocock 的 27 个工程 skill 带进每个 DeepSeek Harness 会话（11 个模型自动取用、16 个由人用 / 唤起）`
+   - **Topics**（当前 `topics: []`）：至少加 `dsh-plugin`（市场靠它识别）；可选再加 `deepseek-harness`、`skills`。
+4. **README 含安装命令 —— 已完成**。仓库根 `README.md` 已补上这一行（市场扫的是根 README，不是插件目录里的那份）：
 
    ```bash
    dsh plugin --profile desktop add dsh-plugin-matt-skills
    ```
 
-   插件目录内的 [README.md](./README.md) 已经有了。
+   插件目录内的 [README.md](./README.md) 同样有。
 
 可选但建议：**仓库根放一份 LICENSE**。GitHub API 报 `license: null`（本插件的 LICENSE 在子目录里，GitHub 不识别），根目录放一份会让仓库更可信。
 
