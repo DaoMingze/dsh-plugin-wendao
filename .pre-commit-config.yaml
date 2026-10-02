@@ -5,19 +5,29 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
+      # 各插件 skills/ 下是逐字节 vendor 的上游内容，其字节由各插件自己的
+      # scripts/sync-skills.mjs --check 按摘要校验。下面三个修复型钩子一旦改写其中
+      # 任何一个字节，校验立刻报漂移、提交被拦，所以整棵子树排除。这不是洁癖：
+      # references/onboarding.md 里有 Markdown 的「两个行尾空格 = 强制换行」，
+      # 修掉它会改变上游文档的渲染结果。
+      # （同样适用于下方的 end-of-file-fixer 与 mixed-line-ending。）
       - id: trailing-whitespace
+        exclude: ^dsh-plugin-[^/]+/skills/
       - id: end-of-file-fixer
+        exclude: ^dsh-plugin-[^/]+/skills/
       # cordis.patch.yml 用 Cordis Loader 方言：bundledSkillDir 必须是 `!!js`
       # 表达式以动态定位本包 skills 目录，没有可移植的替代写法。PyYAML 对
-      # tag:yaml.org,2002:js 没有构造器（--unsafe 也不行），故只排除这一个文件。
+      # tag:yaml.org,2002:js 没有构造器（--unsafe 也不行），所以这类文件整体排除。
+      # 模式用 [^/]+ 而非 [a-z-]+，将来插件名带数字或点也不必再改。
       - id: check-yaml
-        exclude: ^dsh-plugin-matt-skills/cordis\.patch\.yml
+        exclude: ^dsh-plugin-[^/]+/cordis\.patch\.yml
       - id: check-toml
       - id: check-merge-conflict
       - id: check-added-large-files
         args: ["--maxkb=1024"]
       - id: mixed-line-ending
         args: ["--fix=lf"]
+        exclude: ^dsh-plugin-[^/]+/skills/
   - repo: https://git.bookrest.top/wizard/CommitGate.git
     rev: v0.1.0
     hooks:
