@@ -1,0 +1,10 @@
+# 统一行尾为 LF。
+#
+# 仓库内容全部以 LF 提交，但 core.autocrlf=true 的机器会在 checkout 时把文本
+# 物化成 CRLF，于是 mixed-line-ending 这类强制 LF 的钩子会在第一次提交时中止、
+# 要求重新暂存。这里钉死 LF，git 就不再往工作区吐 CRLF。
+#
+# text=auto 让 git 自行判定文本/二进制，二进制文件不受影响。
+# 两个 submodule 内部各有自己的 .gitattributes（上游 diagram-design 用它把
+# SKILL.md 钉在 eol=lf），本条不作用于子模块内部。
+* text=auto eol=lf
