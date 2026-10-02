@@ -9,10 +9,12 @@ Matt Pocock, redistributed under the MIT License in `LICENSE`.
 
 ## What is upstream content
 
-Everything under `skills/` is copied verbatim from the upstream repository by
+Everything under `skills/` is copied from the upstream repository by
 `scripts/sync-skills.mjs`. Upstream prose is not edited, translated, or
-reordered here. `upstream.json` records the exact version, commit, file list,
-and content digest of every vendored skill.
+reordered here; line endings are normalized to LF, which is what upstream
+stores (a local checkout under `core.autocrlf` may hand out CRLF instead).
+`upstream.json` records the exact version, commit, file list, and content
+digest of every vendored skill.
 
 ## What this port adds
 

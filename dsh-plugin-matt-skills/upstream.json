@@ -10,7 +10,7 @@
     "excludedPaths": [
       "agents/"
     ],
-    "note": "Skill files are copied byte for byte; only another harness's metadata is left out."
+    "note": "Skill files are copied byte for byte with LF line endings; only another harness's metadata is left out."
   },
   "skills": [
     {
@@ -21,7 +21,7 @@
         "PHASE-BOUNDARIES.md",
         "SKILL.md"
       ],
-      "digest": "4eff1a7966f4ebe91a57d169f15d3aa8f226e7d10b193044dad898b79591a769"
+      "digest": "72a507195adfd0469cc690bea0b1c32cc92c8f9083069b02b98fbb6ff61d2ab5"
     },
     {
       "name": "code-review",
@@ -30,7 +30,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "cd715e65cbf32ac5223b24dde1b51f6bd70341e24c834feb2e7c4d4a59999657"
+      "digest": "26e8e4c68acdc9bc45dd983eb65262b2426b5b0cb6e7db0628d8c6d9ffeefa1d"
     },
     {
       "name": "codebase-design",
@@ -41,7 +41,7 @@
         "DESIGN-IT-TWICE.md",
         "SKILL.md"
       ],
-      "digest": "ec7e62ad8463ff99a65af8d5de371a73a7dc63f8128e1e024fb17c31d047267d"
+      "digest": "95395d9970b320d38e9e8943c328d79c2050a8fbb0b1bffac3999318e492bcdb"
     },
     {
       "name": "diagnosing-bugs",
@@ -51,7 +51,7 @@
         "SKILL.md",
         "scripts/hitl-loop.template.sh"
       ],
-      "digest": "766846e31e01b4a23a0a797451d5dc9a59e80b706404d6cd613b535ee2cec4a5"
+      "digest": "0abd64a9634a3714917e4de7ad5d1ae2a8f23dc9279146d3ee4dcaefdebc8f3d"
     },
     {
       "name": "domain-modeling",
@@ -62,7 +62,7 @@
         "GLOSSARY-FORMAT.md",
         "SKILL.md"
       ],
-      "digest": "51d1135302ac9c5f54d9521fd79415dd118e4ea7f15813ab2ce523822af1799c"
+      "digest": "2c181a5081467c3c0cc2d716c6301d44228527528a578c886d5a8fbf2a673380"
     },
     {
       "name": "grill-me",
@@ -71,7 +71,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "03dbedd0d686ba4f4198b97f34cbeb726521323d3c99cba36a50f39e0685d286"
+      "digest": "732e5bc9f9cf2b783e1fa7584798c35e908a518e92033c61981c38bbddad72bc"
     },
     {
       "name": "grill-with-docs",
@@ -80,7 +80,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "5fe1204e73398e385436e2d983038538270de16bd5afceba0763ea1658b2de8a"
+      "digest": "00a1109703301a20b9ca1cd0c5b5ed01a443123f717b1360f24467eeb789c71e"
     },
     {
       "name": "grilling",
@@ -89,7 +89,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "2b3a0ba46d4f1d279e3d7fdb59fa7a37c013c8e04e41bb4acbab55950aa1b907"
+      "digest": "1eb50232f934c6cea70eecc705a92e11d968872e76f82fec7e5c0c6088c85fd4"
     },
     {
       "name": "handoff",
@@ -98,7 +98,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "3092cc796060159e3169073c5a9c4f963283993eb67704520166be5cc49eeba1"
+      "digest": "0ce82f8d424c5a064bf4d67ff9ece11c6d35453094cf83528b843b0e2b63f71e"
     },
     {
       "name": "implement",
@@ -107,7 +107,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "40010a2c19b87cfb5c5002d2cf345871e575a0fc5949f12aa6008065bcc5fcca"
+      "digest": "8aa412ff29385a4593b3f821e1dc5def63f0fc48fbcac294f1378ba84a3cfa85"
     },
     {
       "name": "implement-spec",
@@ -116,7 +116,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "887b17041947f5f53da58b45dbdc2dfd27fda1b323ae5eb3a88c965e530895f0"
+      "digest": "c36693e115c40f03c666e4d66056b7c647d0a0d8ece8dbdfbb6aa0e5fcc42003"
     },
     {
       "name": "improve-codebase-architecture",
@@ -126,7 +126,7 @@
         "HTML-REPORT.md",
         "SKILL.md"
       ],
-      "digest": "0f220a590708c4ad74138c7c1f6bbe911a662ba9062d2bfba69f12f1152aae0e"
+      "digest": "c0f0d2e0c39885be3df13dab9392d49a88c7253b5fb23ec9ba763fe3e6c34e11"
     },
     {
       "name": "pr",
@@ -136,7 +136,7 @@
         "CREDITS.md",
         "SKILL.md"
       ],
-      "digest": "4fc0eff636e4169e31355c9b69529cb6b6c4004e0ef6a18391a4998607667e25"
+      "digest": "9258cf441b8b96288eaf3174f3e2fe44d02fd862b4112bc36a0edffd95916f9b"
     },
     {
       "name": "prototype",
@@ -147,7 +147,7 @@
         "SKILL.md",
         "UI.md"
       ],
-      "digest": "af386d3d5ff1472402c60f7129af75d527f948858fefafedee4fac46dde2c718"
+      "digest": "9e1badfb56af4bbef686d68f526cd7499e06603a6781c7b6359a595dee124756"
     },
     {
       "name": "research",
@@ -156,7 +156,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "600c788396f7638bae25ecee6362303fbfd0e9c3ad7f8d869d33e19ae097ae26"
+      "digest": "ea29abf27f791455dec1014de2836f3939e776888a8f3981b4d5ee874e951f55"
     },
     {
       "name": "retro",
@@ -165,7 +165,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "4c8375429154657dfee4db527714102f3276edebed9230bc1b13ca96c48a3d05"
+      "digest": "f0adca94c99c2815090df191119892b33c05c2f517b8b21d3ddf6651c5fb40a9"
     },
     {
       "name": "setup-matt-pocock-skills",
@@ -179,7 +179,7 @@
         "issue-tracker-local.md",
         "triage-labels.md"
       ],
-      "digest": "8f4610ba3fb68b5214ece660d6a64b0019d55a5f8867d6178d5d6583aa27a29e"
+      "digest": "55717d96f07974eae95945afb962f5926ffd85defd4a76356611693edb21badd"
     },
     {
       "name": "tdd",
@@ -190,7 +190,7 @@
         "mocking.md",
         "tests.md"
       ],
-      "digest": "fc09d62722529a8979afd3afbb68d76f3e1e7ba46dc8595bb9aacbbcd1ee6ae8"
+      "digest": "4138065bf4fbc16d418e58a172c053c8a10d7aa43bc69896a200fe9c20b953a1"
     },
     {
       "name": "teach",
@@ -203,7 +203,7 @@
         "RESOURCES-FORMAT.md",
         "SKILL.md"
       ],
-      "digest": "a9bd7ea12a14d04ff288c6003e0e1f4e7bc5f65d6fa725e7fe90bbe0d7a7388c"
+      "digest": "069fc73c17556afb258561f47a2afef15c4a94890f125d65ff416cbebb6fa7d5"
     },
     {
       "name": "to-questionnaire",
@@ -212,7 +212,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "f5cb0c19faa9697965796167cf34f545133cffd3dfa0598cd46438d45414ee30"
+      "digest": "87d1c9f294f599bbd55a30eebe27c40b40df554bf8b8f8204e0dc8f7f7d38aaf"
     },
     {
       "name": "to-spec",
@@ -221,7 +221,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "8576bd9affdd4dd021ce56317b6c9e44a4aefa72683c9f51e1a157d2adaffcd9"
+      "digest": "88ba734b639b54787b6b5664c759e44236cbcb8d318856bfc96ffb279053347c"
     },
     {
       "name": "to-tickets",
@@ -230,7 +230,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "38c77067e70d9fa10c48382cef610d2937549fdc4be5afb7ca4c91f30a8a9c39"
+      "digest": "7ae69b569ab3e0643a69a59c3f37d2fbd1a5b2be5adfd4df1d8c4251dbd75d5d"
     },
     {
       "name": "triage",
@@ -241,7 +241,7 @@
         "OUT-OF-SCOPE.md",
         "SKILL.md"
       ],
-      "digest": "ca6eb09753f694bd45c1629e03cc902a9a2e78156483b5108eec026b77d1d1e9"
+      "digest": "cca148c2fe928648ef346b0914f6aad64e22ccb26bf3179948828a75c6f79ca0"
     },
     {
       "name": "wait-what",
@@ -250,7 +250,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "bd48ddd41e9891817f29b6579727298651ad68dc81bc9f3bc5e32d2d8c773769"
+      "digest": "bf8bed4e9bf7b7c864752657d4496a297e69df5370a84c4db0873a825df6f9df"
     },
     {
       "name": "wayfinder",
@@ -259,7 +259,7 @@
       "files": [
         "SKILL.md"
       ],
-      "digest": "e83486bafdd6e343eeb2483c239f9cc282cc33544cabf555b961ed8df18e04af"
+      "digest": "1371a69f3b5ba39360c4242f4499d20290a948fda46f492ed6fb8dc267b40173"
     },
     {
       "name": "wizard",
@@ -269,7 +269,7 @@
         "SKILL.md",
         "template.sh"
       ],
-      "digest": "22d6889e6ab0f40766884b8a3badb64dd378e56081f346b0bed9a6523c595816"
+      "digest": "1e89493c540b47768b594ec408e163affec89f97e0eb21756f17c5f9268e4fe3"
     },
     {
       "name": "writing-for-agents",
@@ -279,7 +279,7 @@
         "SKILL-MECHANICS.md",
         "SKILL.md"
       ],
-      "digest": "a9beb1faead8484929935d21d36c90b596844efce216f3ee3484847efcd3db89"
+      "digest": "34553943759dc840d22ca4b6bcd05c44337963cf5f9cde9b46548e0fcd7f2476"
     }
   ]
 }

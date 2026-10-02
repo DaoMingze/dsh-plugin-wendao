@@ -23,7 +23,7 @@
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
-import { copyFile, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { dirname, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -176,7 +176,9 @@ function readSkillContract(directoryName, raw) {
 function checkOpenAiPolicy(skillDir, contract) {
   const manifest = join(skillDir, 'agents', 'openai.yaml')
   if (!existsSync(manifest)) return []
-  const implicit = /allow_implicit_invocation\s*:\s*(\S+)/.exec(readFileSync(manifest, 'utf8'))
+  const implicit = /allow_implicit_invocation\s*:\s*(\S+)/.exec(
+    normalizeNewlines(readFileSync(manifest)).toString('utf8'),
+  )
   if (!implicit) return []
   const allowsImplicit = implicit[1].replace(/["']/g, '').toLowerCase() === 'true'
   // A model that may invoke implicitly is exactly the skill that does not opt out.
@@ -196,6 +198,29 @@ function execFileSyncSafe(operation) {
   }
 }
 
+/**
+ * Collapse CRLF to LF, at the byte level.
+ *
+ * A local checkout is not authoritative for content: under `core.autocrlf` or a
+ * `.gitattributes` filter, one repository blob lands on disk as LF on one
+ * machine and CRLF on another. Both `sync` and `--check` therefore compare and
+ * write LF-normalized bytes, so a dirty worktree or a Windows checkout cannot
+ * be mistaken for drift.
+ */
+function normalizeNewlines(buffer) {
+  const bytes = []
+  for (let index = 0; index < buffer.length; index += 1) {
+    if (buffer[index] === 0x0d && buffer[index + 1] === 0x0a) continue
+    bytes.push(buffer[index])
+  }
+  return Buffer.from(bytes)
+}
+
+/** Read a file as LF-normalized UTF-8 text. */
+async function readText(path) {
+  return normalizeNewlines(await readFile(path)).toString('utf8')
+}
+
 /** Every file under a skill bundle, excluding other harnesses' metadata. */
 async function collectBundleFiles(skillDir, current = skillDir, collected = []) {
   for (const entry of await readdir(current, { withFileTypes: true })) {
@@ -211,7 +236,7 @@ async function collectBundleFiles(skillDir, current = skillDir, collected = []) 
 async function digestBundle(skillDir, files) {
   const hash = createHash('sha256')
   for (const file of files) {
-    const content = await readFile(join(skillDir, file))
+    const content = normalizeNewlines(await readFile(join(skillDir, file)))
     hash.update(file)
     hash.update('\0')
     hash.update(createHash('sha256').update(content).digest('hex'))
@@ -226,7 +251,7 @@ async function readUpstream(upstreamDir) {
   if (!existsSync(manifestPath)) {
     throw new Error(`no ${UPSTREAM_MANIFEST} under ${upstreamDir}; is that the matt-skills checkout?`)
   }
-  const manifest = JSON.parse(await readFile(manifestPath, 'utf8'))
+  const manifest = JSON.parse(await readText(manifestPath))
   if (!Array.isArray(manifest.skills) || manifest.skills.length === 0) {
     throw new Error(`${UPSTREAM_MANIFEST} lists no skills`)
   }
@@ -245,7 +270,7 @@ async function readUpstream(upstreamDir) {
       failures.push(`${relativePath}: no ${SKILL_FILE}`)
       continue
     }
-    const raw = await readFile(skillFile, 'utf8')
+    const raw = await readText(skillFile)
     const contract = readSkillContract(directoryName, raw)
     const policyProblems = checkOpenAiPolicy(skillDir, contract)
     for (const problem of [...contract.problems, ...policyProblems]) {
@@ -298,7 +323,7 @@ function buildRecord(source, skills) {
     source,
     vendored: {
       excludedPaths: [...EXCLUDED_TOP_LEVEL_DIRS].map(name => `${name}/`),
-      note: 'Skill files are copied byte for byte; only another harness\'s metadata is left out.',
+      note: "Skill files are copied byte for byte with LF line endings; only another harness's metadata is left out.",
     },
     skills: skills.map(skill => ({
       name: skill.name,
@@ -317,7 +342,8 @@ async function writeVendoredSkills(skills) {
     for (const file of skill.files) {
       const destination = join(target, file)
       await mkdir(dirname(destination), { recursive: true })
-      await copyFile(join(skill.sourceDir, file), destination)
+      // Written normalized, so the vendored tree is LF whatever the checkout was.
+      await writeFile(destination, normalizeNewlines(await readFile(join(skill.sourceDir, file))))
     }
   }
 }

@@ -71,6 +71,8 @@ upstream.json                # 记录同一个 commit，外加每个 skill 的�
 
 skill 正文逐字节复制，包括原有的 `disable-model-invocation` 标记；被排除的只有 `agents/`（那是 OpenAI/Codex 的清单，本 Harness 不读）。
 
+行尾统一按 **LF** 规范化后再比较与写入。这不是洁癖：同一个仓库 blob 在 `core.autocrlf=true` 的机器上检出为 CRLF、在别的机器上是 LF，若按工作树裸字节比对，本地检出差异会被误判成漂移——这个假报警在 Windows 上真出现过（27 个 skill 全报 content differs，而 git 对象里的内容完全一致）。所以 `sync` 与 `--check` 的语义统一为「**LF 规范化后的内容是否一致**」，与机器配置无关。
+
 ### 上游更新了怎么办
 
 ```bash
