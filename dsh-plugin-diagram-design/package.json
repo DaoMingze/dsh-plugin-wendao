@@ -26,14 +26,15 @@
     "url": "git+https://github.com/DaoMingze/dsh-plugin-wendao.git",
     "directory": "dsh-plugin-diagram-design"
   },
+  "homepage": "https://github.com/DaoMingze/dsh-plugin-wendao/tree/main/dsh-plugin-diagram-design#readme",
+  "bugs": {
+    "url": "https://github.com/DaoMingze/dsh-plugin-wendao/issues"
+  },
+  "author": "璺道 <dao_mingze@163.com>",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
-  },
-  "scripts": {
-    "sync": "node scripts/sync-skills.mjs",
-    "check": "node --check scripts/sync-skills.mjs && node scripts/sync-skills.mjs --check"
   },
   "engines": {
     "node": "^22.19.0 || >=24"
